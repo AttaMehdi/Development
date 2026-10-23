@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Syed Atta Mehdi | Full-Stack Web & CMS Developer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-color: #0f172a;
+      --card-bg: #1e293b;
+      --accent: #38bdf8;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --border: #334155;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+    }
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      line-height: 1.6;
+      padding: 0 1rem;
+    }
+    header {
+      max-width: 1100px;
+      margin: 4rem auto 2rem;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+      color: var(--text-main);
+    }
+    header h2 {
+      font-size: 1.25rem;
+      color: var(--accent);
+      font-weight: 400;
+      margin-bottom: 1rem;
+    }
+    header p {
+      max-width: 750px;
+      margin: 0 auto;
+      color: var(--text-muted);
+      font-size: 1rem;
+    }
+    .skills-badges {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-top: 1.5rem;
+    }
+    .badge {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      color: var(--text-main);
+      padding: 0.35rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.85rem;
+    }
+    .portfolio-section {
+      max-width: 1100px;
+      margin: 3rem auto;
+    }
+    .filter-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 0.75rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+    .tab-btn {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      padding: 0.5rem 1.25rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .tab-btn.active, .tab-btn:hover {
+      background: var(--accent);
+      color: #0f172a;
+      border-color: var(--accent);
+      font-weight: 600;
+    }
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1.5rem;
+    }
+    .project-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+    .project-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--accent);
+    }
+    .project-card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+    .project-meta {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 0.75rem;
+    }
+    .tag-platform {
+      background: #0284c7;
+      color: #fff;
+      font-size: 0.75rem;
+      padding: 0.15rem 0.5rem;
+      border-radius: 4px;
+    }
+    .tag-niche {
+      background: #334155;
+      color: var(--text-muted);
+      font-size: 0.75rem;
+      padding: 0.15rem 0.5rem;
+      border-radius: 4px;
+    }
+    .project-card a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      display: inline-block;
+      margin-top: 1rem;
+    }
+    .project-card a:hover {
+      text-decoration: underline;
+    }
+    footer {
+      text-align: center;
+      padding: 3rem 0;
+      border-top: 1px solid var(--border);
+      max-width: 1100px;
+      margin: 4rem auto 0;
+      color: var(--text-muted);
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Syed Atta Mehdi</h1>
+    <h2>Full-Stack Web & CMS Developer | Expert in Shopify, WordPress & Custom Web Solutions</h2>
+    <p>Specializing in custom e-commerce stores, business websites, and scalable web application development. Delivered high-performing, responsive, and secure web solutions for diverse global industries.</p>
+    
+    <div class="skills-badges">
+      <span class="badge">WordPress</span>
+      <span class="badge">Shopify</span>
+      <span class="badge">Webflow</span>
+      <span class="badge">Wix</span>
+      <span class="badge">Custom Frameworks</span>
+      <span class="badge">E-commerce</span>
+      <span class="badge">Frontend Development</span>
+    </div>
+  </header>
+
+  <section class="portfolio-section">
+    <div class="filter-tabs">
+      <button class="tab-btn active" onclick="filterProjects('all')">All Projects</button>
+      <button class="tab-btn" onclick="filterProjects('wordpress')">WordPress</button>
+      <button class="tab-btn" onclick="filterProjects('shopify')">Shopify</button>
+      <button class="tab-btn" onclick="filterProjects('custom')">Custom & Webflow</button>
+    </div>
+
+    <div class="projects-grid" id="projectsGrid">
+      
+      <!-- WordPress Projects -->
+      <div class="project-card" data-category="wordpress">
+        <div>
+          <h3>Tim Rose Law</h3>
+          <div class="project-meta">
+            <span class="tag-platform">WordPress</span>
+            <span class="tag-niche">Legal Services</span>
+          </div>
+        </div>
+        <a href="https://www.timroselaw.com/" target="_blank">Visit Website &rarr;</a>
+      </div>
+
+      <div class="project-card" data-category="wordpress">
+        <div>
+          <h3>T.W. Hicks Inc.</h3>
+          <div class="project-meta">
+            <span class="tag-platform">WordPress</span>
+            <span class="tag-niche">Industrial Flooring</span>
+          </div>
+        </div>
+        <a href="https://www.twhicksinc.com/" target="_blank">Visit Website &rarr;</a>
+      </div>
+
+      <div class="project-card" data-category="wordpress">
+        <div>
+          <h3>Quartz Tubing</h3>
+          <div class="project-meta">
+            <span class="tag-platform">WordPress</span>
+            <span class="tag-niche">Manufacturing</span>
+          </div>
+        </div>
+        <a href="https://quartztubing.com/" target="_blank">Visit Website &rarr;</a>
+      </div>
+
+      <div class="project-card" data-category="wordpress">
+        <div>
+          <h3>Imerex Logistics</h3>
+          <div class="project-meta">
+            <span class="tag-platform">WordPress</span>
+            <span class="tag-niche">Freight & Freight Trade</span>
+          </div>
+        </div>
+        <a href="https://www.imerex.com/" target="_blank">Visit Website &rarr;</a>
+      </div>
+
+      <div class="project-card" data-category="wordpress">
+        <div>
+          <h3>Legacy Pro Co</h3>
+          <div class="project-meta">
+            <span class="tag-platform">WordPress</span>
+            <span class="tag-niche">Contracting</span>
+          </div>
+        </div>
+        <a href="https://www.legacyproco.com/" target="_blank">Visit Website &rarr;</a>
+      </div>
+
+      <div class="project-card" data-category="wordpress">
+        <div>
+          <h3>Absolute Aluminum</h3>
+          <div class="project-meta">
+            <span class="tag-platform">WordPress</span>
+            <span class="tag-niche">Home Improvement</span>
+          </div>
+        </div>
+        <a href="https://www.absolutealuminum.com/" target="_blank">Visit Website &rarr;</a>
+      </div>
+
+      <div class="project-card" data-category="wordpress">
+        <div>
+          <h3>Edify USA</h3>
+          <div class="project-meta">
+            <span class="tag-platform">WordPress</span>
+            <span class="tag-niche">Education / Non-Profit</span>
+          </div>
+        </div>
+        <a href="https://edifyusa.com/" target="_blank">Visit Website &rarr;</a>
+      </div>
+
+      <div class="project-card" data-category="wordpress">
+        <div>
+          <h3>Ultimate Construction LLC</h3>
+          <div class="project-meta">
+            <span class="tag-platform">WordPress</span>
+            <span class="tag-niche">Construction</span>
+          </div>
+        </div>
+        <a href="https://ultimateconstructionllc.com/" target="_blank">Visit Website &rarr;</a>
+      </div>
+
+      <div class="project-card" data-category="wordpress">
+        <div>
+          <h3>The WCA</h3>
+          <div class="project-meta">
+            <span class="tag-platform">WordPress</span>
+            <span class="tag-niche">Corporate Association</span>
+          </div>
+        </div>
+        <a href="https://www.thewca.com/" target="_blank">Visit Website &rarr;</a>
+      </div>
+
+      <div class="project-card" data-category="wordpress">
+        <div>
+          <h3>Heritage Tyler</h3>
+          <div class="project-meta">
+            <span class="tag-platform">WordPress</span>
+            <span class="tag-niche">Real Estate / Hospitality</span>
+          </div>
+        </div>
+        <a href="https://heritagetyler.com/" target="_blank">Visit Website &rarr;</a>
+      </div>
+
+      <!-- Shopify Projects -->
+      <div class="project-card" data-category="shopify">
+        <div>
+          <h3>Booyah Pack</h3>
+          <div class="project-meta">
+            <span class="tag-platform">Shopify</span>
+            <span class="tag-niche">Outdoor & Gear</span>
+          </div>
+        </div>
+        <a href="https://booyahpack.com/" target="_blank">Visit Website &rarr;</a>
+      </div>
+
+      <div class="project-card" data-category="shopify">
+        <div>
+          <h3>JClean Shop</h3>
+          <div class="project-meta">
+            <span class="tag-platform">Shopify</span>
+            <span class="tag-niche">E-commerce / Retail</span>
+          </div>
+        </div>
+        <a href="https://www.jclean.shop/" target="_blank">Visit Website &rarr;</a>
+      </div>
+
+      <div class="project-card" data-category="shopify">
+        <div>
+          <h3>Our Dog Tales</h3>
+          <div class="project-meta">
+            <span class="tag-platform">Shopify</span>
+            <span class="tag-niche">Pet Supplies & Goods</span>
+          </div>
+        </div>
+        <a href="https://ourdogtales.com/" target="_blank">Visit Website &rarr;</a>
+      </div>
+
+      <!-- Custom & Webflow Projects -->
+      <div class="project-card" data-category="custom">
+        <div>
+          <h3>Talent Frequency</h3>
+          <div class="project-meta">
+            <span class="tag-platform">Custom Web</span>
+            <span class="tag-niche">Recruitment Platform</span>
+          </div>
+        </div>
+        <a href="https://talentfrequency.com/" target="_blank">Visit Website &rarr;</a>
+      </div>
+
+      <div class="project-card" data-category="custom">
+        <div>
+          <h3>Common Good Partners</h3>
+          <div class="project-meta">
+            <span class="tag-platform">Custom Web</span>
+            <span class="tag-niche">Business Advisory</span>
+          </div>
+        </div>
+        <a href="https://commongood.partners/" target="_blank">Visit Website &rarr;</a>
+      </div>
+
+      <div class="project-card" data-category="custom">
+        <div>
+          <h3>AMP Energy</h3>
+          <div class="project-meta">
+            <span class="tag-platform">Custom Web</span>
+            <span class="tag-niche">Energy & Infrastructure</span>
+          </div>
+        </div>
+        <a href="https://amp.energy/" target="_blank">Visit Website &rarr;</a>
+      </div>
+
+      <div class="project-card" data-category="custom">
+        <div>
+          <h3>CodeComply AI</h3>
+          <div class="project-meta">
+            <span class="tag-platform">Custom Web</span>
+            <span class="tag-niche">AI & Compliance SaaS</span>
+          </div>
+        </div>
+        <a href="https://codecomply.ai/" target="_blank">Visit Website &rarr;</a>
+      </div>
+
+      <div class="project-card" data-category="custom">
+        <div>
+          <h3>RevRocket Agency</h3>
+          <div class="project-meta">
+            <span class="tag-platform">Custom Web</span>
+            <span class="tag-niche">Digital Agency & Growth</span>
+          </div>
+        </div>
+        <a href="https://www.revrocket.agency/" target="_blank">Visit Website &rarr;</a>
+      </div>
+
+      <div class="project-card" data-category="custom">
+        <div>
+          <h3>ZigZagPol</h3>
+          <div class="project-meta">
+            <span class="tag-platform">Custom App</span>
+            <span class="tag-niche">Social Networking Platform</span>
+          </div>
+        </div>
+        <a href="https://zygzagpol.com/" target="_blank">Visit Website &rarr;</a>
+      </div>
+
+      <div class="project-card" data-category="custom">
+        <div>
+          <h3>Retina Vision Consultants</h3>
+          <div class="project-meta">
+            <span class="tag-platform">Custom Web</span>
+            <span class="tag-niche">Healthcare / Eyecare</span>
+          </div>
+        </div>
+        <a href="https://rvc360.com/" target="_blank">Visit Website &rarr;</a>
+      </div>
+
+      <div class="project-card" data-category="custom">
+        <div>
+          <h3>Coastal Carriers</h3>
+          <div class="project-meta">
+            <span class="tag-platform">Custom Web</span>
+            <span class="tag-niche">Logistics & Transportation</span>
+          </div>
+        </div>
+        <a href="https://coastalcarriersct.com/" target="_blank">Visit Website &rarr;</a>
+      </div>
+
+      <div class="project-card" data-category="custom">
+        <div>
+          <h3>Prep Montessori Academy</h3>
+          <div class="project-meta">
+            <span class="tag-platform">Custom Web</span>
+            <span class="tag-niche">Education / Schooling</span>
+          </div>
+        </div>
+        <a href="https://prepmontessori.com/" target="_blank">Visit Website &rarr;</a>
+      </div>
+
+      <div class="project-card" data-category="custom">
+        <div>
+          <h3>Premier Propane NC</h3>
+          <div class="project-meta">
+            <span class="tag-platform">Custom Web</span>
+            <span class="tag-niche">Energy & Hardware</span>
+          </div>
+        </div>
+        <a href="https://www.premierpropanenc.com/" target="_blank">Visit Website &rarr;</a>
+      </div>
+
+      <div class="project-card" data-category="custom">
+        <div>
+          <h3>Picture Pawn LLC</h3>
+          <div class="project-meta">
+            <span class="tag-platform">Custom Web</span>
+            <span class="tag-niche">Financial Services</span>
+          </div>
+        </div>
+        <a href="https://www.picturepawnllc.com/" target="_blank">Visit Website &rarr;</a>
+      </div>
+
+      <div class="project-card" data-category="custom">
+        <div>
+          <h3>5AM For A Reason</h3>
+          <div class="project-meta">
+            <span class="tag-platform">Custom Web</span>
+            <span class="tag-niche">Lifestyle & Media</span>
+          </div>
+        </div>
+        <a href="https://5amforareason.com/" target="_blank">Visit Website &rarr;</a>
+      </div>
+
+      <div class="project-card" data-category="custom">
+        <div>
+          <h3>Wipco Inc.</h3>
+          <div class="project-meta">
+            <span class="tag-platform">Custom Web</span>
+            <span class="tag-niche">Industrial Services</span>
+          </div>
+        </div>
+        <a href="https://www.wipcoinc.com/" target="_blank">Visit Website &rarr;</a>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 Syed Atta Mehdi. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function filterProjects(category) {
+      const cards = document.querySelectorAll('.project-card');
+      const buttons = document.querySelectorAll('.tab-btn');
+      
+      buttons.forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+
+      cards.forEach(card => {
+        if (category === 'all' || card.getAttribute('data-category') === category) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+  </script>
+</body>
+</html>
